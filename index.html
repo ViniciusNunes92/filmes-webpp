@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineList - Minha Lista de Filmes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="movie-container">
+            <div class="movie-header">
+                <h1>CineList</h1>
+                <p class="text-muted">Organize seus filmes para assistir</p>
+            </div>
+            <div class="filters btn-group mb-4">
+                <button class="btn btn-outline-danger active" data-filter="all">Todos</button>
+                <button class="btn btn-outline-danger" data-filter="pending">Pendentes</button>
+                <button class="btn btn-outline-danger" data-filter="watched">Assistidos</button>
+            </div>
+            <form id="movie-form" class="mb-4">
+                <div class="input-group">
+                    <input type="text" id="movie-input" class="form-control" placeholder="Adicionar novo filme..." required />
+                    <select id="movie-category" class="form-select">
+                        <option value="Ação">Ação</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Ficção">Ficção</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </form>
+            <div id="movie-list">
+                <div class="empty-list" id="empty-message">
+                    <i class="fas fa-film fa-3x mb-3"></i>
+                    <p>Sua lista está vazia. Adicione seu primeiro filme!</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span id="items-left" class="text-muted">0 filmes pendentes</span>
+                <button id="clear-watched" class="btn btn-sm btn-outline-secondary">Limpar Assistidos</button>
+            </div>
+        </div>
+        
+        <div class="stats-container mt-4">
+            <h3 class="text-center mb-3">Estatísticas</h3>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-count">0</div>
+                        <div class="stat-label">Total de Filmes</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="stat-card">
+                        <div class="stat-value" id="watched-count">0</div>
+                        <div class="stat-label">Filmes Assistidos</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="stat-card">
+                        <div class="stat-value" id="fav-category">-</div>
+                        <div class="stat-label">Categoria Favorita</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-4">
+        <div class="container text-center">
+            <p>&copy; 2025 CineList - Desenvolvido por Você</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
